@@ -464,11 +464,23 @@
   </head>
   <body id="theBody" class="home page-template page-template-page-canvas page-template-page-canvas-php page page-id-539 dhrk vice-dhrk qw_palette_dark qw-menutype1 vice-body-background-fullscreen qw-is_desktop vice-elementor elementor-default elementor-kit-541 elementor-page elementor-page-539" data-vice-glitch-arrogance="29" data-qwajx="1" data-maincolor="#00d53f" data-jsdebug>
 
-    <audio id="welcomeAudio" autoplay>
-      <source src="play.mp3" type="audio/mp3">
-      <!-- Add additional source elements for different audio formats if needed -->
-      Your browser does not support the audio element.
-    </audio>
+     <audio id="background-music" controls autoplay loop style="display: none;">
+        <source src="wp-content/uploads/2020/05/play.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+
+      <script>
+      // Function to play the audio
+      function playAudio() {
+        var audio = document.getElementById("background-music");
+        audio.play();
+      }
+
+      // Add event listener to play audio when the page is clicked
+      document.addEventListener("DOMContentLoaded", function() {
+        document.body.addEventListener("click", playAudio);
+      });
+    </script>
     <div class="vice-theme-container" id="vice-theme-container">
       <div class="qw-header-fixed qw-animated vice-menu vice-menu--alternative" id="qwFixedHeader">
         <div class="vice-menu__contents">
@@ -1446,16 +1458,7 @@
     <script type="text/javascript" src="wp-content/plugins/astroidz/assets/js/postprocessing/GlitchPass20b9.js?ver=1.0.2" id="GlitchPass-js"></script>
     <script type="text/javascript" src="wp-content/plugins/astroidz/assets/js/astroidz20b9.js?ver=1.0.2" id="astroidz-js"></script>
     <script type="text/javascript" src="wp-content/plugins/contact-form-7/includes/swv/js/index41a3.js?ver=5.8" id="swv-js"></script>
-    <script type="text/javascript" id="contact-form-7-js-extra">
-      //
-      < ![CDATA[var wpcf7 = {
-            "api": {
-              "root": "https:\/\/vice.qantumthemes.xyz\/dhrk\/wp-json\/",
-              "namespace": "contact-form-7\/v1"
-            }
-          };
-          //]]>
-    </script>
+    
     <script type="text/javascript" src="wp-content/plugins/contact-form-7/includes/js/index41a3.js?ver=5.8" id="contact-form-7-js"></script>
     <script type="text/javascript" src="wp-content/plugins/qt-swipebox/min/qt-swipebox-min3781.js?ver=6.2.2" id="swipebox-js"></script>
     <script type="text/javascript" src="wp-content/themes/vice/js/jquery.slimScroll4963.js?ver=1.1" id="_s-slimscroll-js"></script>
@@ -1696,22 +1699,5 @@
     <script type="text/javascript" src="wp-content/plugins/vice-elementor/widgets/post-carousel/post-carousel8a54.js?ver=1.0.0" id="vice-elementor-post-carousel-js"></script>
     <script type="text/javascript" src="wp-content/plugins/vice-elementor/widgets/moderngallery/moderngallery8a54.js?ver=1.0.0" id="vice-elementor-moderngallery-js"></script>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-          // This function will be executed when the DOM is fully loaded
-          playWelcomeScript();
-      });
-
-      function playWelcomeScript() {
-          // Your welcome script goes here
-          console.log("Welcome to Squid Coin Revolution! Dive into the crypto chaos!");
-
-          // Play the audio
-          var audio = document.getElementById("welcomeAudio");
-          audio.play();
-
-          // You can add more actions or animations here
-      }
-      </script>
   </body>
 </html>
